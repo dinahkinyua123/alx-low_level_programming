@@ -1,7 +1,7 @@
 #include<stdio.h>
 /**
  * main - A program that prints the size of various types functions
- * Return 0(perfect)
+ * Return:0 (perfect)
  */
 int main(void)
 {
