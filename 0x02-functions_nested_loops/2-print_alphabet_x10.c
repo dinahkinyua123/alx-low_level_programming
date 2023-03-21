@@ -1,7 +1,7 @@
 #include"main.h"
 /**
  * print_alphabet_x10 - makes alphabet x10
- * Return:0 (perfect)
+ * follwed by a new line
  */
 void print_alphabet_x10(void)
 {
