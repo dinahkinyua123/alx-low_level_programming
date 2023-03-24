@@ -1,4 +1,5 @@
 #include"main.h"
+#include<stdio.h>
 /**
  * more_numbers - print 10 times the numbers since 0 to 14
  * Return: 10 timesof teh numbers since 0 to 14
@@ -13,9 +14,9 @@ void more_numbers(void)
 	{
 	if (y > 9)
 	{
-	_putchar(y / 10) + '0');
+	_putchar((y / 10) + '0');
 	}
-	_putchar(y % 10) + '0');
+	putchar((y % 10) + '0');
 	}
 	_putchar('\n');
 	}
