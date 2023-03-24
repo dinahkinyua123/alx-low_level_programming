@@ -1,9 +1,9 @@
 #include"main.h"
 /**
- * jack_baver - prints every minute of the day
+ * jack_bauer - prints every minute of the day
  * Return: ...
  */
-void jack_baver(void)
+void jack_bauer(void)
 {
 	int a, b, c, d;
 
