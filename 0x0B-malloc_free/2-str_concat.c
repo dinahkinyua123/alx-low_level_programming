@@ -4,39 +4,42 @@
  * str_concat - get ends of input and add together for size
  * @s1: input value
  * @s2: input value
- * Return: conct of s1 and s2
+ * Return: concat of s1 and s2
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *conct;
-	int x, ci;
+	int i = 0, j = 0, k = 0, l = 0;
+	char *s;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	x = ci = 0;
-	while (s1[x] != '\0')
-		x++;
-	while (s2[ci] != '\0')
-		conct = malloc(sizeof(char) * (x + ci + 1));
+	while (s1[i])
+		i++;
+	while (s2[j])
+		j++;
+	l = i + j;
+	s = malloc((sizeof(char) * l) + 1);
 
-	if (conct == NULL)
+	if (s == NULL)
 		return (NULL);
-	x = ci = 0;
-	while (s1[x] != '\0')
+	j = 0;
+	while (k < l)
 	{
-		conct[x] = s1[x];
-		x++;
+	if (k <= i)
+		s[k] = s1[k];
+	if (k >= i)
+	{
+		s[k] = s2[j];
+		j++;
 	}
 
-	while (s2[ci] != '\0')
-	{
-		conct[x] = s2[ci];
-		x++, ci++;
+	k++;
 	}
-	conct[x] = '\0';
-	return (conct);
+	s[k] = '\0';
+	return (s);
 }
+
 
