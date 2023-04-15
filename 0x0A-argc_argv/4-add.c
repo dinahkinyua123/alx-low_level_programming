@@ -3,7 +3,7 @@
 #include<ctype.h>
 #include<string.h>
 /**
- * check-num - check - string there are digit
+ * check-num - string there are digit
  * @str: array str
  * Return: (0) perfect
  */
