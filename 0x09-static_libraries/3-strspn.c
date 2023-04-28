@@ -1,6 +1,6 @@
 #include"main.h"
 /**
- * _strcmp - entry point
+ * _strspn - entry point
  * @s: input value
  * @accept: input value
  * Return: (0) perfect
