@@ -21,6 +21,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	while (s2[x])
 		x++;
+
 	if (n >= x)
 		y = i + x;
 	else
