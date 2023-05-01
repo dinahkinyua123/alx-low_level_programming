@@ -3,7 +3,7 @@
 
 int word_len(char *str);
 int count_words(char *str);
-int **strtow(char *str);
+char **strtow(char *str);
 
 /**
  * word_len - locates the index marking the end of the
@@ -54,14 +54,14 @@ int count_words(char *str)
  */
 char **strtow(char *str)
 {
-	char **strngs;
+	char **strings;
 	int index = 0, words, w, letters, l;
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 
 	words = count_words(str);
-	if (word == 0)
+	if (words == 0)
 		return (NULL);
 
 	strings = malloc(sizeof(char *) * (words + 1));
