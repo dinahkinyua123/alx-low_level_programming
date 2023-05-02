@@ -1,40 +1,37 @@
+#include<stdio.h>
 #include"lists.h"
 
 /**
- * free_listint_safe - frees a linked list
- * @h: pointer to the first node in the linked list
- * Return: number of elements in the freed list
+ * find_listint_loop - counts the nmber of unique nodes
+ * in a looped_listint_t linked list
+ * @head: pointer to the head of the listint_t to check
+ * Return: if the list is not looped - 0
+ * otherwise - the number of unique nodes in the list
  */
-size_t free_listint_safe(listint_t **h)
+listint_t *find_listint_loop(listint_t *head)
 {
-	size_t s = 0;
-	int d;
-	listint_t *z;
+listint_t *tortoise, *hare;
 
-	if (!h || !*h)
-		return (0);
-
-	while (*h)
+tortoise = hare = head;
+while (tortoise && hare && hare->next)
+{
+	tortoise = tortoise->next;
+	hare = hare->next->next;
+	if (tortoise == hare)
 	{
-		d = *h - (*h)->next;
-		if (d > 0)
-		{
-			z = (*h)->next;
-			free(*h);
-			*h = z;
-			s++;
-		}
-		else
-		{
-			free(*h);
-			*h = NULL;
-			s++;
-			break;
-		}
+		tortoise = head;
+		break;
 	}
 
-	*h = NULL;
+}
+if (!tortoise || !hare || !hare->next)
+	return (NULL);
+while (tortoise != hare)
+{
+	tortoise = tortoise->next;
+	hare = hare->next;
+}
+return (hare);
 
-	return (s);
 }
 
